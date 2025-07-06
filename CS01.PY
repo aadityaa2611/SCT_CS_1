@@ -1,4 +1,4 @@
-# Simple Caesar Cipher Program
+# Updated Caesar Cipher Program with clearer result output
 
 def caesar_cipher(text, shift):
     result = ""
@@ -23,10 +23,10 @@ def main():
 
     if choice == 'E':
         encrypted = caesar_cipher(message, shift)
-        print(f"Encrypted: {encrypted}")
+        print("Result: The encrypted message is →", encrypted)
     elif choice == 'D':
         decrypted = caesar_cipher(message, -shift)
-        print(f"Decrypted: {decrypted}")
+        print("Result: The decrypted message is →", decrypted)
     else:
         print("Invalid option. Choose E or D.")
 
