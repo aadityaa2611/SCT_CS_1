@@ -1,22 +1,19 @@
-# Caesar Cipher Encryption and Decryption
+# Simple Caesar Cipher Program
 
-def encrypt(text, shift):
+def caesar_cipher(text, shift):
     result = ""
     for char in text:
         if char.isalpha():
-            shift_base = ord('A') if char.isupper() else ord('a')
-            shifted = chr((ord(char) - shift_base + shift) % 26 + shift_base)
+            base = ord('A') if char.isupper() else ord('a')
+            shifted = chr((ord(char) - base + shift) % 26 + base)
             result += shifted
         else:
             result += char
     return result
 
-def decrypt(text, shift):
-    return encrypt(text, -shift)
-
 def main():
-    print("Caesar Cipher Encryption/Decryption")
-    choice = input("Do you want to (E)ncrypt or (D)ecrypt? ").strip().upper()
+    print("=== Caesar Cipher ===")
+    choice = input("Encrypt or Decrypt? (E/D): ").strip().upper()
     message = input("Enter your message: ")
     try:
         shift = int(input("Enter shift value (integer): "))
@@ -25,13 +22,13 @@ def main():
         return
 
     if choice == 'E':
-        encrypted = encrypt(message, shift)
-        print(f"Encrypted message: {encrypted}")
+        encrypted = caesar_cipher(message, shift)
+        print(f"Encrypted: {encrypted}")
     elif choice == 'D':
-        decrypted = decrypt(message, shift)
-        print(f"Decrypted message: {decrypted}")
+        decrypted = caesar_cipher(message, -shift)
+        print(f"Decrypted: {decrypted}")
     else:
-        print("Invalid choice. Please choose E or D.")
+        print("Invalid option. Choose E or D.")
 
 if __name__ == "__main__":
     main()
