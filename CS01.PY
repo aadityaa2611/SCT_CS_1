@@ -1,6 +1,6 @@
 # Simple Caesar Cipher Program
 
-Install Python.
+Install Python
 Run:
 
 def caesar_cipher(text, shift):
