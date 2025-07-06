@@ -1,5 +1,8 @@
 # Simple Caesar Cipher Program
 
+Install Python.
+Run:
+
 def caesar_cipher(text, shift):
     result = ""
     for char in text:
